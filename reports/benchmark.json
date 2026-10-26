@@ -1,0 +1,22 @@
+{
+  "fixture": "synthetic-seed-73-v1",
+  "seed": 42,
+  "paths": 10000,
+  "horizon": 252,
+  "portfolio_value": 149597.39058917592,
+  "cash": 21030.0,
+  "risk": {
+    "volatility": 0.09657120019302923,
+    "sharpe": 1.4367653862955025,
+    "sortino": 2.270395417730063,
+    "max_drawdown": -0.0850503145096434,
+    "var95": 0.008743493400988279,
+    "observations": 520,
+    "risk_free_rate": 0.02
+  },
+  "terminal_mean": 176164.49656008862,
+  "p5": 148509.78702122718,
+  "p95": 208184.7353820057,
+  "probability_loss": 0.0591,
+  "elapsed_seconds": 0.3920938330120407
+}

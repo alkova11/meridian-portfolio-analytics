@@ -1,12 +1,14 @@
 # Meridian · Portfolio Analytics
 
+[Live web app](https://meridian-portfolio-analytics-alkova11.adeptrhea24.chatgpt.site) · [GitHub repository](https://github.com/alkova11/meridian-portfolio-analytics) · [Dashboard PNG](https://raw.githubusercontent.com/alkova11/meridian-portfolio-analytics/main/reports/figures/dashboard-live.png)
+
 A configurable portfolio dashboard with a Python accounting and risk engine. Choose the charts you want, inspect historical performance and explore reproducible simulation scenarios—while keeping cash flows separate from investment returns.
 
 **Python · FastAPI · React · TypeScript · Plotly · Parquet**
 
-![Synthetic portfolio wealth, historical drawdown and Monte Carlo percentile bands](reports/figures/project-overview.png)
+![Live Meridian configurable portfolio dashboard](reports/figures/dashboard-live.png)
 
-*Standalone analytical figure generated from the bundled synthetic fixture. This is not a screenshot of the interface. All figures are synthetic EUR data; no API keys or live market connection are required.*
+*Actual published dashboard captured by the hosting service. All displayed data are synthetic EUR examples; no API keys or live market connection are required. A separate [research figure](reports/figures/project-overview.png) shows the calculated wealth, drawdown and simulation bands.*
 
 ## The problem
 
@@ -79,6 +81,20 @@ Optional plotting dependencies are included in the lockfile under the publicatio
 
 The Playwright workflow is available via `npm run test:e2e` after installing its browser with `npx playwright install chromium` and starting both servers. Browser visual/end-to-end validation has **not passed in this environment** because saved browser-origin policy prevents localhost observation. Local numerical checks and a successful build are not a claim of a passing GitHub Actions run. See [the validation record](docs/VALIDATION.md).
 
+
+## Public web version
+
+The public application runs without a local API server. It starts with cached, provenance-labelled synthetic results, then executes the same Python application functions in a Pyodide 314.0.7 module worker for custom simulations, scenarios and CSV imports. Each visitor gets isolated in-memory state; imports are not uploaded and reset on page reload. Layout preferences remain in browser local storage.
+
+```sh
+# After uv sync and npm ci, from frontend/
+npm run build:public
+# Optional numerical worker integration check; first run downloads pinned Python wheels
+npm run test:public-runtime
+```
+
+Serve `frontend/dist-public/` on HTTPS static hosting. No Python server, broker login or account is required by visitors. Runtime package versions are recorded in custom-run exports; seeded paths are reproducible within that runtime, with no promise of bitwise equality across native and WebAssembly numerical libraries.
+
 ## Synthetic example
 
 The bundled fixture spans 2024-10-25 through 2026-10-23. It produces EUR 149,597.39 in final portfolio value, including EUR 21,030 cash and EUR 110,000 net external capital. Historical annualised volatility is approximately 9.66% and maximum drawdown approximately −8.51%. These are synthetic demonstration outputs, not an investment track record.
@@ -111,4 +127,4 @@ Long-only EUR equities/ETFs and cash, local single-user operation. No FX, crypto
 
 Risk uses daily simple TWR, 252-day annualisation and a 2% effective annual risk-free rate. VaR is a 1-day historical loss threshold. Performance graphs show indexed, cash-flow-neutral wealth. Simulations exclude future dividends/contributions, leave cash at zero yield and use a weekday calendar without exchange-holiday exclusions. Normal and bootstrap models do not establish forecast accuracy.
 
-The interface composition was informed by a user-supplied reference video. Original media are not redistributed, and exact visual fidelity has not been certified. The project is a local portfolio/research prototype; it has not been deployed. A public-use licence has not yet been selected.
+The interface composition was informed by a user-supplied reference video. Original media are not redistributed, and exact visual fidelity has not been certified. The public demo runs the Python engine in an isolated browser worker; the native FastAPI server remains available for local use. Trial imports in the public version stay in the tab and reset on reload. The default synthetic view is precomputed by the same Python package; custom calculations load the pinned Pyodide runtime on first use. A public-use licence has not yet been selected.

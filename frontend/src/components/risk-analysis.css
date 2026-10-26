@@ -1,0 +1,224 @@
+.holdings-analysis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border-bottom: 1px solid #202833;
+  background: #070b10;
+  color: #aab7c7;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+}
+.holdings-analysis section {
+  min-width: 0;
+}
+.risk-breakdown {
+  border-right: 1px solid #202833;
+}
+.analysis-heading {
+  display: flex;
+  align-items: center;
+  min-height: 35px;
+  padding: 10px 12px;
+  background: #0c1219;
+  border-bottom: 1px solid #18212b;
+}
+.analysis-heading h2 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #b5c2d1;
+  margin: 0;
+}
+.analysis-heading h2 span {
+  font-size: 8px;
+  color: #687a8e;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 10px;
+}
+.risk-definition-list {
+  margin: 0;
+  padding: 1px 12px 0;
+}
+.risk-definition-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1.1fr) minmax(70px, 0.6fr) minmax(0, 2fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid #17202a;
+  line-height: 1.5;
+}
+.risk-definition-row:last-child {
+  border: 0;
+}
+.risk-definition-row dt {
+  color: #9cabbc;
+  font-size: 9px;
+}
+.risk-definition-row dd {
+  margin: 0;
+}
+.risk-metric-value {
+  color: #d1deed;
+  font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.risk-definition-row .risk-metric-description {
+  font-size: 8px;
+  color: #74869a;
+  line-height: 1.6;
+}
+.analysis-footnote {
+  margin: 0;
+  padding: 12px;
+  color: #607286;
+  font-size: 7px;
+  line-height: 1.7;
+}
+.correlation-chart {
+  height: 306px;
+  margin: 4px 8px 0;
+}
+.holdings-analysis .interactive-plot {
+  pointer-events: auto;
+}
+.correlation-legend {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 3px 16px 11px 56px;
+  color: #8196ae;
+  font-size: 8px;
+}
+.correlation-legend i {
+  display: block;
+  width: 110px;
+  max-width: 32%;
+  height: 5px;
+  background: linear-gradient(90deg, #34314f, #111d2b, #315c80, #a0cee5);
+}
+.correlation-legend small {
+  font-size: 7px;
+  color: #6c8097;
+  margin-left: auto;
+}
+.correlation-data {
+  margin: 0 16px 12px 56px;
+  color: #7d94af;
+  font-size: 8px;
+}
+.correlation-data summary {
+  cursor: pointer;
+  padding: 4px 0;
+}
+.correlation-data summary:focus-visible {
+  outline: 1px solid #92b8e7;
+  outline-offset: 3px;
+}
+.correlation-table-wrap {
+  overflow: auto;
+  margin-top: 8px;
+}
+.correlation-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+.correlation-table-wrap caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 8px 0;
+  color: #6c8097;
+  font-size: 8px;
+  line-height: 1.6;
+}
+.correlation-table-wrap th,
+.correlation-table-wrap td {
+  padding: 7px;
+  border: 1px solid #223041;
+  text-align: right;
+  font-size: 8px;
+}
+.correlation-table-wrap th {
+  background: #0c1520;
+  color: #8ca4bf;
+}
+.correlation-empty {
+  padding: 25px 15px;
+  color: #7388a1;
+  line-height: 1.8;
+}
+.terminal .holdings-analysis {
+  background: #060a0d;
+  border-color: var(--line);
+}
+.terminal .analysis-heading {
+  background: #0b1013;
+}
+.terminal .risk-breakdown {
+  border-color: var(--line);
+}
+@media (max-width: 1100px) {
+  .risk-definition-row {
+    grid-template-columns: minmax(100px, 1fr) 75px;
+    gap: 5px 10px;
+    padding: 10px 0;
+  }
+  .risk-definition-row .risk-metric-description {
+    grid-column: 1/-1;
+  }
+  .correlation-chart {
+    height: 365px;
+  }
+  .analysis-heading h2 span {
+    font-size: 7px;
+    margin-left: 6px;
+  }
+}
+@media (max-width: 760px) {
+  .holdings-analysis {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .risk-breakdown {
+    border-right: 0;
+    border-bottom: 1px solid #202833;
+  }
+  .risk-definition-row {
+    grid-template-columns: minmax(110px, 1fr) 75px minmax(0, 1.7fr);
+    gap: 12px;
+  }
+  .risk-definition-row .risk-metric-description {
+    grid-column: auto;
+  }
+  .correlation-chart {
+    height: 310px;
+  }
+  .analysis-heading h2 span {
+    font-size: 7px;
+  }
+}
+@media (max-width: 440px) {
+  .risk-definition-row {
+    grid-template-columns: 1fr 80px;
+    gap: 5px 10px;
+  }
+  .risk-definition-row .risk-metric-description {
+    grid-column: 1/-1;
+  }
+  .correlation-chart {
+    height: 285px;
+    margin: 0;
+  }
+  .correlation-legend {
+    padding-left: 48px;
+    gap: 6px;
+  }
+  .correlation-legend small {
+    font-size: 6px;
+  }
+  .analysis-heading h2 span {
+    font-size: 6px;
+  }
+}

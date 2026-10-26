@@ -1,0 +1,71 @@
+export type Holding = {
+  symbol: string;
+  name: string;
+  sector: string;
+  quantity: number;
+  basis: number;
+  price: number;
+  value: number;
+  weight: number;
+  unrealised: number;
+  daily: number;
+  spark: number[];
+};
+export type Overview = {
+  value: number;
+  cash: number;
+  as_of: string;
+  daily_pnl: number;
+  all_time_pnl: number;
+  unrealised: number;
+  realised: number;
+  income: number;
+  fees: number;
+  total_return: number;
+  benchmark_return: number;
+  beta: number;
+  concentration: number;
+  correlations: Record<string, Record<string, number | null>>;
+  net_flows: number;
+  metrics: {
+    volatility: number;
+    downside_deviation: number;
+    sharpe: number | null;
+    sortino: number | null;
+    max_drawdown: number;
+    var95: number;
+    observations: number;
+  };
+  holdings: Holding[];
+  performance: {
+    dates: string[];
+    values: number[];
+    actual_values: number[];
+    benchmark: number[];
+    drawdown: number[];
+    returns: number[];
+  };
+  worst_date: string;
+  peak_date: string;
+  recovery_date: string | null;
+  assumptions: string[];
+};
+export type Simulation = {
+  run_id: string;
+  result: {
+    quantiles: number[][];
+    dates: string[];
+    histogram: { counts: number[]; edges: number[] };
+    expected: number;
+    median: number;
+    expected_return: number;
+    probability_loss: number;
+    p5: number;
+    p95: number;
+    seed: number;
+    paths: number;
+    horizon: number;
+    method: string;
+    elapsed_seconds: number;
+  };
+};

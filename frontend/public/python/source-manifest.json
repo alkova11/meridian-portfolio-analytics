@@ -1,0 +1,9 @@
+{
+  "src/portfolio_analytics/__init__.py": "6ffa7f24181d42a35cca75d0220bfab822e2037ba9f38a03f6f9cf1b979f7d74",
+  "src/portfolio_analytics/accounting.py": "b075025c17830a3b8d41a81dfac58db94d32c65e0f2da9bf52f8535057880078",
+  "src/portfolio_analytics/analytics.py": "9b44966f9989b470bcf373b3783990c98d295a8b13ba7fcdbff2a3a638e3b151",
+  "src/portfolio_analytics/sample.py": "d91e3dbe8c4294d4b7f363f6878934ca56d67a383e63c54ac2f7a90ad790a55e",
+  "src/portfolio_analytics/web_runtime.py": "0d462c2d75f35e42e775bce6e76df7319bf0034db35410660e94548dbb9f4398",
+  "backend/app/main.py": "0f0d594c77da32ef324a124960ba5e43d74f62c46c6758ac2f47838498d31127",
+  "uv.lock": "8255f4fc55269a3126a4ac9c273fc281d0cd530945ebe14ba7732b586d898b85"
+}
