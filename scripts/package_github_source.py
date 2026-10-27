@@ -38,9 +38,12 @@ extra_files = [
     "docs/METHODOLOGY.md",
     "docs/DATA.md",
     "docs/VALIDATION.md",
+    "docs/PUBLIC_DEPLOYMENT.md",
+    "docs/publication/LINKEDIN-PROJECT.md",
     "reports/benchmark.json",
     "reports/figures/project-overview.png",
     "reports/figures/dashboard-live.png",
+    "reports/figures/linkedin-launch.png",
     "reports/publication/synthetic-demo.json",
 ]
 paths = {ROOT / p for p in allowed_files + extra_files if (ROOT / p).is_file()}

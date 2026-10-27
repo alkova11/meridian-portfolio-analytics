@@ -1,6 +1,8 @@
-# Validation record — 25 October 2026
+# Validation record — updated 27 October 2026
 
-This record describes checks actually completed locally. It does not certify a public release, production deployment or GitHub-hosted CI pass.
+This record distinguishes local checks from public deployment verification. The app is publicly deployed; a GitHub-hosted CI pass and full browser interaction pass are not claimed.
+
+## Original native validation — 25 October 2026
 
 | Check | Result |
 |---|---|
@@ -24,3 +26,5 @@ The 2400 × 1350 figure is a standalone analytical plot, not an application scre
 The public build passed TypeScript/Vite and the existing 26 native/frontend tests. The pinned Pyodide Python worker was additionally exercised in Node: native/WASM valuation and volatility parity, seeded bootstrap repeatability, custom lognormal quantile ordering, scenarios, CSV preview/commit/idempotence, deposit P&L neutrality and export lookup all passed. The worker calls the same Python backend functions rather than a separate JavaScript finance model.
 
 Sites version 1 deployed successfully and its access policy is public. The hosting service produced a native screenshot for review. A direct automated HTTP smoke check was blocked by Cloudflare browser-integrity error 1010 (403); certificate verification remained enabled. No bot protection or browser-origin restriction was bypassed. Native deployment/access metadata verifies publication; this is not a claim that a full browser interaction suite passed.
+
+The actual 1200 × 750 native screenshot was saved as `reports/figures/dashboard-live.png` and visually inspected. Its GitHub blob checksum matches the local source bundle. The separate `project-overview.png` remains an analytical figure. The source and image were fetched successfully from the public repository after upload.
