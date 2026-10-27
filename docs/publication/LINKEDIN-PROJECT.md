@@ -28,4 +28,6 @@ The numerical engine is covered by 16 Python/API tests and 10 frontend tests, wi
 
 **Suggested skills:** Python, NumPy, pandas, FastAPI, TypeScript, React, Plotly, Financial Modelling, Portfolio Analytics, Risk Management, Software Testing.
 
-No LinkedIn profile edit or post has been submitted. Add the links and PNG to the profile's Projects/Featured section when ready.
+**Publication status — 27 October 2026:** Added to Abdulrahman Al Kassar's LinkedIn Projects section through the signed-in Safari session. The completed form contained the description and three media items: the 1600 × 900 project PNG, live app link and GitHub source link. LinkedIn returned “Save was successful.” No separate feed post was created.
+
+**Profile:** https://www.linkedin.com/in/abdulrahman-al-kassar-850b20300/
